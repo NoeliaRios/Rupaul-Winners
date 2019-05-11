@@ -1,0 +1,13 @@
+#loader {
+  height: 50px;
+  display: none;
+}
+#loader.show {
+  display: block;
+}
+
+#listado-participantes li img {
+  height: 50px;
+}
+
+/*# sourceMappingURL=style.css.map */

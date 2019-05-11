@@ -1,6 +1,7 @@
 function fetchParticipantes(url) {
+    document.getElementById('loader').classList.add('show');
 
-    fetch(url)
+    fetch(`http://www.nokeynoshade.party/api/queens/${url}`)
         .then(res => res.json()) //interprete los datos como json
         .then(data => {
             const ul = document.querySelector('ul#listado-participantes');
@@ -14,15 +15,20 @@ function fetchParticipantes(url) {
                     <p>${data[i].winner ? 'Si' : 'No'}</p>
                     </li>`;
             }
-            ul.innerHTML = lis
-        })
+
+            document.getElementById('loader').classList.remove('show');
+            ul.innerHTML = lis;
+        });
     //lis va a  tener un string con cada uno de esos elementos y esos li los guardo dentro de los ul
 }
 
+
 document.getElementById('all').onclick = function () {
-    fetchParticipantes('http://www.nokeynoshade.party/api/queens/all');
+    fetchParticipantes('all');
 }
 
 document.getElementById('winners').onclick = function () {
-    fetchParticipantes('http://www.nokeynoshade.party/api/queens/winners');
+    fetchParticipantes('winners');
 }
+
+fetchParticipantes('all');

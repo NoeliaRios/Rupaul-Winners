@@ -1,0 +1,15 @@
+#loader{
+    height: 50px;
+    display: none;
+    &.show{
+        display: block;
+    }
+}
+
+#listado-participantes{
+    li{
+        img{
+            height: 50px;
+        }
+    }
+}
