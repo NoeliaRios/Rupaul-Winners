@@ -7,7 +7,7 @@ function fetchParticipantes(url) {
             const ul = document.querySelector('ul#listado-participantes');
             let lis = '';
 
-            for (let i = 0; i < data.lenght; i++) {
+            for (let i = 0; i < data.length; i++) {
                 lis +=
                     `<li>
                     <img src="${data[i].image_url}"/>
